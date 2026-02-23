@@ -3,7 +3,6 @@ package com.demo.sunat.entity;
 import com.demo.sunat.enums.ResultadoConsulta;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,7 +11,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "consultas")
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Consulta {
@@ -36,7 +34,7 @@ public class Consulta {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "company_id", nullable = true)
     private Company company;
 

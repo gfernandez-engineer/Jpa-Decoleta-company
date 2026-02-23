@@ -1,8 +1,6 @@
 # Secrets
 .env*
 
-# Claude Code
-.claude/
 
 # Dependencies
 node_modules
@@ -11,6 +9,8 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Readme files
+README_SPEECH.md
 # Maven
 target/
 *.class

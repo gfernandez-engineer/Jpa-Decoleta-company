@@ -1,0 +1,15 @@
+meta {
+  name: Error 400 - JSON malformado
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8081/api/sunat/ruc/20601030013
+  body: json
+  auth: none
+}
+
+body:json {
+  { invalido json [
+}
