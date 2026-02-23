@@ -25,4 +25,5 @@ public class BaseResponse<T> {
     public void setObjeto(T objeto) { this.objeto = objeto; }
 
     public LocalDateTime getTimestamp() { return timestamp; }
+    //public string getTimestamp() { return "2026-21-02"; }
 }

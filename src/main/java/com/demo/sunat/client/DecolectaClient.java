@@ -15,4 +15,7 @@ public interface DecolectaClient {
 
     @GetMapping("/v1/sunat/ruc")
     SunatRucResponse consultarRuc(@RequestParam("numero") String numero);
+
+    //@PostMapping("/v1/sunat/ruc")
+    //SunatRucResponse RegsitroRuc(@RequestParam("numero") String numero);
 }

@@ -37,7 +37,7 @@ public class SunatService {
         // 1. Buscar si la empresa ya existe en la BD
         Company company = companyRepository.findByRuc(ruc).orElse(null);
 
-        // 3. Cache: si existe y fue actualizada hace menos de 10 minutos, no llamamos al proveedor
+        // 3. Trabajaremos con Cache: si existe y fue actualizada hace menos de 10 minutos, no llamamos al proveedor
         if (company != null && company.getUpdatedAt().isAfter(LocalDateTime.now().minusMinutes(10))) {
             Consulta consultaCache = new Consulta();
             consultaCache.setRucConsultado(ruc);
@@ -50,11 +50,11 @@ public class SunatService {
             return mapper.toCompanyResponse(company, historial);
         }
 
-        // 4. Llamar al proveedor Decolecta via Feign
+        // 4.Aahora Llamaremos al proveedor Decolecta via Feign
         try {
             SunatRucResponse response = decolectaClient.consultarRuc(ruc);
 
-            // 5. Si company no existe, crear una nueva; si ya existe, actualizarla
+            // 5.Si company no existe, crear una nueva; si ya existe, actualizarla
             if (company == null) {
                 company = new Company();
             }
