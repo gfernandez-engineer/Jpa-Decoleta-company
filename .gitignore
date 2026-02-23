@@ -10,7 +10,7 @@ node_modules
 Thumbs.db
 
 # Readme files
-README_SPEECH.md
+
 # Maven
 target/
 *.class
